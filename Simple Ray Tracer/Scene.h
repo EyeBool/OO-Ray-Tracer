@@ -4,6 +4,7 @@
 #include "Camera.h"
 #include "Light.h"
 #include "VisibleObject.h"
+#include "Ray.h"
 #include <vector>
 
 class Scene {
@@ -12,8 +13,10 @@ class Scene {
 	std::vector<VisibleObject> objects;
 
 public:
-	Camera getCamera();
-	void addVisibleObject(VisibleObject visibleObject);
+	// setters and getters
+	Camera getCamera() const;
+	void addVisibleObject(const VisibleObject& visibleObject);
+	std::vector<VisibleObject> getVisibleObjects() const;
 };
 
 #endif SCENE_H

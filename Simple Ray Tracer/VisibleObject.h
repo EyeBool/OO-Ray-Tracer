@@ -12,6 +12,8 @@ class VisibleObject {
 public:
 	Vector3D getCenter() const;
 	double getRadius() const;
+	Material getMaterial() const;
+
 	Vector3D getNormal(const Vector3D& position) const;
 };
 
