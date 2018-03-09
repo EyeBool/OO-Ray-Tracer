@@ -24,6 +24,6 @@ double Ray::getDistanceToIntersection(const VisibleObject& visibleObject) const 
 	if (discriminant < 0)
 		return DBL_MAX;
 	else
-		return dotProduct(rayDirection, relativePosition) - 0.5 * std::sqrt(discriminant);
+		return -dotProduct(rayDirection, relativePosition) - 0.5 * std::sqrt(discriminant);
 
-}
+} 

@@ -4,6 +4,9 @@
 
 #include <iostream>
 
+// TODO: fix orientation
+
+
 int main() {
 	// set things up
 
@@ -11,7 +14,7 @@ int main() {
 	Camera camera = Camera(Vector3D(0.0, 0.0, -1.0), Vector3D(0.0, 1.0, 0.0), Vector3D(0.0, 0.0, 0.0));
 
 	// create image plane
-	ImagePlane imagePlane = ImagePlane(camera, 1.0, 2.0, 2.0, 100, 100);
+	ImagePlane imagePlane = ImagePlane(camera, 1.0, 2.0, 2.0, 300, 300);
 
 	// create scene
 	Scene scene = Scene(camera, imagePlane);
@@ -21,14 +24,20 @@ int main() {
 	scene.addLight(light);
 
 	// create and add objects
-	Material sphere1Materia2 = Material(000.0, 200.0, 0.0, 1, 1, 1, 1);
-	VisibleObject sphere2 = VisibleObject(Vector3D(0.0, 0.0, 0.75), 0.5, sphere1Materia2);
-	scene.addVisibleObject(sphere2);
-
+	// red
 	Material sphere1Material = Material(100.0, 0.0, 0.0, 1, 1, 1, 1);
-	VisibleObject sphere1 = VisibleObject(Vector3D(0.0, 0.0, 0.0), 0.25, sphere1Material);
+	VisibleObject sphere1 = VisibleObject(Vector3D(0.0, 0.0, 0.0), 0.1, sphere1Material);
 	scene.addVisibleObject(sphere1);
 
+	// green
+	Material sphere2Material = Material(000.0, 200.0, 0.0, 1, 1, 1, 1);
+	VisibleObject sphere2 = VisibleObject(Vector3D(0.0, 0.0, 0.75), .5, sphere2Material);
+	scene.addVisibleObject(sphere2);
+
+	// blue
+	Material sphere3Material = Material(0.0, 0.0, 200.0, 1, 1, 1, 1);
+	VisibleObject sphere3 = VisibleObject(Vector3D(0.5, -0.5, 2.0), .5, sphere3Material);
+	scene.addVisibleObject(sphere3);
 
 	// render
 

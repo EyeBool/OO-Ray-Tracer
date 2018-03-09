@@ -20,7 +20,7 @@ double Material::getBlue() const {
 }
 
 Vector3D Material::getColor() const {
-	return Vector3D(red, blue, green);
+	return Vector3D(red, green, blue);
 }
 
 double Material::getSpecular() const {

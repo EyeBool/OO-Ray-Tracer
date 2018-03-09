@@ -14,7 +14,7 @@ class Tracer {
 public:
 	Tracer(const Scene& scene);
 
-	std::pair<double, VisibleObject*> trace(const Ray& ray) const;
+	std::pair<double, Vector3D> trace(const Ray& ray) const;
 	bool isRayBlocked(const Ray& ray, double tolerance = -0.01) const;
 };
 
