@@ -1,6 +1,8 @@
 # OO Ray Tracer
 
-This is an object-oriented CPU ray tracer written in C++. The emphasis is on the exposition of the workings of ray tracers, and on object-oriented design principles.
+OO Ray Tracer (ORT) is an object-oriented CPU ray tracer written in C++. The emphasis is on the exposition of the workings of ray tracers, and on object-oriented design principles.
+
+ORT is at version `0.1` at the moment.
 
 ## Dependencies
 
