@@ -1,5 +1,7 @@
 #include "VisibleObject.h"
 
+VisibleObject::VisibleObject() {}
+
 VisibleObject::VisibleObject(const Vector3D& center, double radius, const Material& material)
 	: center(center), radius(radius), material(material) {}
 

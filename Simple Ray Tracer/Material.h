@@ -7,6 +7,7 @@ class Material {
 	double red, green, blue;
 	double specular, lambert, ambient, radius;
 public:
+	Material();
 	Material(
 		double red, double green, double blue,
 		double specular, double lambert, double ambient, double radius

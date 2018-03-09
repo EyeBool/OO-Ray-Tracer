@@ -10,6 +10,7 @@ class VisibleObject {
 	Material material;
 
 public:
+	VisibleObject();
 	VisibleObject(const Vector3D& center, double radius, const Material& material);
 
 	Vector3D getCenter() const;

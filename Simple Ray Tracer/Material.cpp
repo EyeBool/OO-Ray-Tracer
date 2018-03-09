@@ -1,5 +1,8 @@
 #include "Material.h"
 
+// TODO: factor out the "empty" material that is needed for the object at infinity
+Material::Material() {}
+
 Material::Material(
 	double red, double green, double blue,
 	double specular, double lambert, double ambient, double radius
