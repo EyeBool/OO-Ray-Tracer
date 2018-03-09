@@ -13,11 +13,11 @@ class ImagePlane {
 	unsigned int verticalResolution;		// in pixels
 
 public:
-	double getPixelWidth();
-	double getPixelHeight();
-	Vector3D getCenterPosition();
-	Vector3D getBottomLeftCornerPosition();
-	Ray getRay(unsigned int pixel_x, unsigned int pixel_y);
+	double getPixelWidth() const;
+	double getPixelHeight() const;
+	Vector3D getCenterPosition() const;
+	Vector3D getBottomLeftCornerPosition() const;
+	Ray getRay(unsigned int pixel_x, unsigned int pixel_y) const;
 };
 
 #endif

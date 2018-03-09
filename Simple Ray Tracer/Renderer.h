@@ -3,12 +3,13 @@
 
 #include "VisibleObject.h"
 #include "Scene.h"
+#include "Shader.h"
 
 class Renderer {
-	Vector3D shade(const Scene& scene, const VisibleObject& visibleObject);
-
+	Scene scene;
+	Shader shader;
 public:
-	Renderer(Scene scene);
+	Renderer(const Scene& scene, const Shader& shader);
 	void render(Scene scene);
 };
 

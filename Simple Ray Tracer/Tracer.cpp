@@ -17,7 +17,7 @@ std::pair<double, VisibleObject*> Tracer::trace(const Ray& ray) const {
 	return nearestObjectInfo;
 }
 
-bool Tracer::isRayBlocked(const Ray& ray, double tolerance = -0.01) {
+bool Tracer::isRayBlocked(const Ray& ray, double tolerance = -0.01) const {
 	std::pair<double, VisibleObject*> nearestObjectInfo = trace(ray);
 	return nearestObjectInfo.first > tolerance;
 }
