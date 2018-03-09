@@ -8,7 +8,7 @@ int main() {
 	// set things up
 
 	// create camera
-	Camera camera = Camera(Vector3D(0.0, 0.0, -1.0), Vector3D(0.0, 1.0, 0.0), Vector3D(0.0, 0.0, 1.0));
+	Camera camera = Camera(Vector3D(0.0, 0.0, -1.0), Vector3D(0.0, 1.0, 0.0), Vector3D(0.0, 0.0, 0.0));
 
 	// create image plane
 	ImagePlane imagePlane = ImagePlane(camera, 1.0, 2.0, 2.0, 100, 100);
@@ -21,9 +21,13 @@ int main() {
 	scene.addLight(light);
 
 	// create and add objects
-	Material sphereMaterial = Material(100, 100, 200, 1, 1, 1, 1);
-	VisibleObject sphere = VisibleObject(Vector3D(0.0, 2.0, 0.0), 0.5, sphereMaterial);
-	scene.addVisibleObject(sphere);
+	Material sphere1Materia2 = Material(000.0, 200.0, 0.0, 1, 1, 1, 1);
+	VisibleObject sphere2 = VisibleObject(Vector3D(0.0, 0.0, 0.75), 0.5, sphere1Materia2);
+	scene.addVisibleObject(sphere2);
+
+	Material sphere1Material = Material(100.0, 0.0, 0.0, 1, 1, 1, 1);
+	VisibleObject sphere1 = VisibleObject(Vector3D(0.0, 0.0, 0.0), 0.25, sphere1Material);
+	scene.addVisibleObject(sphere1);
 
 
 	// render

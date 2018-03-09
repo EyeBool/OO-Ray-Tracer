@@ -12,7 +12,7 @@ void Renderer::render(const std::string& file_name) {
 	for (unsigned x = 0; x < scene.getImagePlane().getHorizontalResolution(); x++) {
 		for (unsigned y = 0; y < scene.getImagePlane().getVerticalResolution(); y++) {
 			Vector3D color = shader.shade(x, y);
-			image.set_pixel(x, y, color.x, color.y, color.z);
+			image.set_pixel(x, y, (unsigned char)color.x, (unsigned char)color.y, (unsigned char)color.z);
 		}
 	}
 

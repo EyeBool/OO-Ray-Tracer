@@ -3,9 +3,9 @@
 
 // constructors
 
-Vector3D::Vector3D() : x(0), y(0), z(0) {}
+Vector3D::Vector3D() : x(0.0), y(0.0), z(0.0) {}
 
-Vector3D::Vector3D(double x, double y, double z) : x(0), y(0), z(0) {}
+Vector3D::Vector3D(double x, double y, double z) : x(x), y(y), z(z) {}
 
 Vector3D::Vector3D(const Vector3D& vector3D) : x(vector3D.x), y(vector3D.y), z(vector3D.z) {}
 
@@ -18,22 +18,22 @@ Vector3D& Vector3D::operator=(const Vector3D& vector3D) {
 	return *this;
 }
 
-bool Vector3D::operator==(const Vector3D& vector3D) {
+bool Vector3D::operator==(const Vector3D& vector3D) const {
 	return (x == vector3D.x) && (y == vector3D.y) && (z == vector3D.z);
 }
 
 // instance methods
 
-double Vector3D::length() {
+double Vector3D::length() const {
 	return std::sqrt(x * x + y * y + z * z);
 }
 
-double Vector3D::lengthSquared() {
+double Vector3D::lengthSquared() const {
 	return x * x + y * y + z * z;
 }
 
-Vector3D Vector3D::unitVector() {
-	if (x == 0.0f && y == 0.0f && z == 0.0f)
+Vector3D Vector3D::unitVector() const {
+	if (x == 0.0 && y == 0.0 && z == 0.0)
 		return Vector3D();
 
 	return (1 / length()) * Vector3D(x, y, z);

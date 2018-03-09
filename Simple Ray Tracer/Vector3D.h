@@ -12,12 +12,12 @@ public:
 
 	// operators
 	Vector3D& operator=(const Vector3D& vector3D);
-	bool operator==(const Vector3D& vector3D);
+	bool operator==(const Vector3D& vector3D) const;
 
 	// instance methods
-	double length();
-	double lengthSquared();
-	Vector3D unitVector();
+	double length() const;
+	double lengthSquared() const;
+	Vector3D unitVector() const;
 
 	// friend methods
 	friend Vector3D operator*(double scalar, const Vector3D& vector3D);

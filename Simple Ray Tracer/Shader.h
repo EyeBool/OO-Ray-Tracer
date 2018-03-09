@@ -6,7 +6,7 @@
 class Shader {
 	Scene scene;
 	Tracer tracer;
-	Vector3D backgroundColor = Vector3D(1.0, 1.0, 1.0);
+	Vector3D backgroundColor = Vector3D(100.0, 100.0, 100.0);
 
 public:
 	Shader(const Scene& scene, const Tracer& tracer);
