@@ -7,6 +7,11 @@ class Material {
 	double red, green, blue;
 	double specular, lambert, ambient, radius;
 public:
+	Material(
+		double red, double green, double blue,
+		double specular, double lambert, double ambient, double radius
+	);
+
 	double getRed() const;
 	double getGreen() const;
 	double getBlue() const;

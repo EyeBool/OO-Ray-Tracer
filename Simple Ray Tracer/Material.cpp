@@ -1,5 +1,12 @@
 #include "Material.h"
 
+Material::Material(
+	double red, double green, double blue,
+	double specular, double lambert, double ambient, double radius
+)
+	: red(red), green(green), blue(blue),
+	specular(specular), lambert(lambert), ambient(ambient), radius(radius) {}
+
 double Material::getRed() const {
 	return red;
 }

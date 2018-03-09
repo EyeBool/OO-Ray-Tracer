@@ -1,7 +1,9 @@
 #include "Tracer.h"
 
+Tracer::Tracer(const Scene& scene) : scene(scene) {}
+
 std::pair<double, VisibleObject*> Tracer::trace(const Ray& ray) const {
-	std::make_pair<double, VisibleObject*> nearestObjectInfo;
+	std::pair<double, VisibleObject*> nearestObjectInfo;
 	nearestObjectInfo.first = DBL_MAX;
 	nearestObjectInfo.second = NULL;
 
@@ -17,7 +19,7 @@ std::pair<double, VisibleObject*> Tracer::trace(const Ray& ray) const {
 	return nearestObjectInfo;
 }
 
-bool Tracer::isRayBlocked(const Ray& ray, double tolerance = -0.01) const {
+bool Tracer::isRayBlocked(const Ray& ray, double tolerance) const {
 	std::pair<double, VisibleObject*> nearestObjectInfo = trace(ray);
 	return nearestObjectInfo.first > tolerance;
 }

@@ -7,6 +7,8 @@ class Light {
 	Vector3D position;
 
 public:
+	Light(const Vector3D& position);
+
 	Vector3D getPosition() const;
 };
 

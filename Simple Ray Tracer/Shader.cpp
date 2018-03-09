@@ -1,12 +1,11 @@
 #include "Shader.h"
 
-Shader::Shader(const Scene& scene, const ImagePlane& imagePlane, const Tracer& tracer)
-	: scene(scene), imagePlane(imagePlane), tracer(tracer) {}
+Shader::Shader(const Scene& scene, const Tracer& tracer) : scene(scene), tracer(tracer) {}
 
 
 // TODO: finish shader
-Vector3D shade(unsigned int pixel_x, unsigned int pixel_y) {
-	Ray viewRay = imagePlane.getRay(pixel_x, pixel_y);
+Vector3D Shader::shade(unsigned int pixel_x, unsigned int pixel_y) {
+	Ray viewRay = scene.getRay(pixel_x, pixel_y);
 
 	std::pair<double, VisibleObject*> nearestObjectInfo = tracer.trace(viewRay);
 

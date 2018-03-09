@@ -2,16 +2,14 @@
 #include "ImagePlane.h"
 #include "Scene.h"
 #include "Tracer.h"
-#include "Utility.h"
 
 class Shader {
 	Scene scene;
-	ImagePlance imagePlane;
 	Tracer tracer;
-	Vector3D backgroundColor = Vector3D(0.0, 0.0, 0.0);
+	Vector3D backgroundColor = Vector3D(1.0, 1.0, 1.0);
 
 public:
-	Shader(const Scene& scene, const ImagePlane& imagePlane, const Tracer& tracer);
+	Shader(const Scene& scene, const Tracer& tracer);
 
 	Vector3D shade(unsigned int pixel_x, unsigned int pixel_y);
 };

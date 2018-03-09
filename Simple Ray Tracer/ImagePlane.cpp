@@ -1,27 +1,34 @@
 #include "ImagePlane.h"
 
-double ImagePlane::getPixelWidth() {
+ImagePlane::ImagePlane(
+	const Camera& camera, double distanceFromCamera,
+	double width, double height,
+	unsigned int horizontalResolution, unsigned int verticalResolution
+)
+	: camera(camera), distanceFromCamera(distanceFromCamera),
+	width(width), height(height),
+	horizontalResolution(horizontalResolution), verticalResolution(verticalResolution) {}
+
+double ImagePlane::getPixelWidth() const {
 	return width / double(horizontalResolution);
 }
 
-double ImagePlane::getPixelHeight() {
+double ImagePlane::getPixelHeight() const {
 	return height / double(verticalResolution);
 }
 
-Vector3D ImagePlane::getCenterPosition() {
+Vector3D ImagePlane::getCenterPosition() const {
 	return camera.getPosition() + distanceFromCamera * camera.getDirection();
 }
 
-Vector3D ImagePlane::getBottomLeftCornerPosition() {
+Vector3D ImagePlane::getBottomLeftCornerPosition() const {
 	return getCenterPosition() - 0.5 * width * camera.getViewingPlanRight() - 0.5 * height * camera.getViewingPlanUp();
 }
 
-Ray ImagePlane::getRay(unsigned int pixel_x, unsigned int pixel_y) {
-	Vector3D tail = camera.getPosition();
-	Vector3D head =
-		getBottomLeftCornerPosition()
-		+ double(pixel_x) * getPixelWidth() * camera.getViewingPlanRight()
-		+ double(pixel_y) * getPixelHeight() * camera.getViewingPlanUp();
+unsigned int ImagePlane::getHorizontalResolution() const {
+	return horizontalResolution;
+}
 
-	return Ray(tail, head);
+unsigned int ImagePlane::getVerticalResolution() const {
+	return verticalResolution;
 }
